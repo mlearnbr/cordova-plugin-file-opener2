@@ -107,7 +107,7 @@ public class FileOpener2 extends CordovaPlugin {
 					// https://stackoverflow.com/questions/9637629/can-we-install-an-apk-from-a-contentprovider/9672282#9672282
 					intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 					Uri path;
-					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+					if (Build.VERSION.SDK_INT < 25) { //25 = Build.VERSION_CODES.N
 						path = Uri.fromFile(file);
 					} else {
 						Context context = cordova.getActivity().getApplicationContext();
